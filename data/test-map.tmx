@@ -6415,6 +6415,26 @@
    <tile gid="63"/>
   </data>
  </layer>
+ <objectgroup color="#ffff00" name="Coins" width="80" height="80">
+  <object name="CoinEntity" x="321" y="449" width="32" height="32">
+   <properties>
+    <property name="image" value="spinning_coin_gold"/>
+    <property name="spritewidth" value="32"/>
+   </properties>
+  </object>
+  <object name="CoinEntity" x="640" y="156" width="32" height="32">
+   <properties>
+    <property name="image" value="spinning_coin_gold"/>
+    <property name="spritewidth" value="32"/>
+   </properties>
+  </object>
+  <object name="CoinEntity" x="704" y="415" width="32" height="32">
+   <properties>
+    <property name="image" value="spinning_coin_gold"/>
+    <property name="spritewidth" value="32"/>
+   </properties>
+  </object>
+ </objectgroup>
  <objectgroup name="Entities" width="80" height="80">
   <object name="mainPlayer" x="285" y="190" width="32" height="32">
    <properties>
@@ -12828,24 +12848,4 @@
    <tile gid="901"/>
   </data>
  </layer>
- <objectgroup color="#ffff00" name="Coins" width="80" height="80">
-  <object name="CoinEntity" x="321" y="449" width="32" height="32">
-   <properties>
-    <property name="image" value="spinning_coin_gold"/>
-    <property name="spritewidth" value="32"/>
-   </properties>
-  </object>
-  <object name="CoinEntity" x="640" y="156" width="32" height="32">
-   <properties>
-    <property name="image" value="spinning_coin_gold"/>
-    <property name="spritewidth" value="32"/>
-   </properties>
-  </object>
-  <object name="CoinEntity" x="704" y="415" width="32" height="32">
-   <properties>
-    <property name="image" value="spinning_coin_gold"/>
-    <property name="spritewidth" value="32"/>
-   </properties>
-  </object>
- </objectgroup>
 </map>

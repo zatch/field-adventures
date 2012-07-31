@@ -39,6 +39,13 @@ var g_resources= [{
     name: "32x32_font",
     type: "image",
     src: "data/sprite/32x32_font.png"
+},
+// audio resources
+{
+    name: "cling",
+    type: "audio",
+    src: "data/audio/",
+    channel: 2
 }];
 
 

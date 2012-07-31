@@ -12,6 +12,8 @@ var CoinEntity = me.CollectableEntity.extend({
     // this function is called by the engine, when
     // an object is touched by something (here collected)
     onCollision: function() {
+	    // do something when collide
+		me.audio.play("cling");
 		// give some score
 		me.game.HUD.updateItemValue("score", 250);
 		// make sure it cannot be collected "again"
