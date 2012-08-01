@@ -20,6 +20,9 @@ var CoinEntity = me.CollectableEntity.extend({
 		this.collidable = false;
 		// remove it
 		me.game.remove(this);
+		
+		// shake it baby !
+		me.game.viewport.shake(10, 30, me.game.viewport.AXIS.BOTH);
     }
  
 });

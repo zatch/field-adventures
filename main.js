@@ -9,9 +9,9 @@
 
 // game resources
 var g_resources= [{
-	name: "grass-tileset",
+	name: "RPG_Maker_VX_RTP_Tileset_by_telles0808",
 	type: "image",
-	src: "data/tilesets/grass-tileset.png"
+	src: "data/tilesets/RPG_Maker_VX_RTP_Tileset_by_telles0808.png"
 },
 {
 	name: "metatiles32x32",
@@ -82,25 +82,40 @@ var jsApp = {
 	Callback when everything is loaded
 	---	*/
 	loaded: function ()
-	{
+	{	
 		// Set the "Play/Ingame" Screen Object
 		me.state.set(me.state.PLAY, new PlayScreen());
 		
-		// Add player entity to pool.
-		me.entityPool.add("mainPlayer", PlayerEntity);
-		me.entityPool.add("CoinEntity", CoinEntity);
+		jsApp.initEntities();
+		jsApp.initInputs();
 		
+		// start the game 
+		me.state.change(me.state.PLAY);
+	},
+	
+	/* ---
+	Set up input bindings
+	---	*/
+	initInputs: function() {
 		// Set up keyboard controls.
+		me.input.bindKey(me.input.KEY.ESCAPE, "main_menu");
+		
 		me.input.bindKey(me.input.KEY.LEFT, "left");
 		me.input.bindKey(me.input.KEY.RIGHT, "right");
 		me.input.bindKey(me.input.KEY.UP, "up");
 		me.input.bindKey(me.input.KEY.DOWN, "down");
 		
+		// Set up mouse controls.
 		me.input.bindKey(me.input.KEY.X, "mouse_move");
 		me.input.bindMouse(me.input.mouse.LEFT, me.input.KEY.X);
-      
-      // start the game 
-		me.state.change(me.state.PLAY);
+	},
+	
+	/* ---
+	Add entities to pool
+	---	*/
+	initEntities: function() {
+		me.entityPool.add("mainPlayer", PlayerEntity);
+		me.entityPool.add("CoinEntity", CoinEntity);
 	}
 
 }; // jsApp
@@ -127,7 +142,19 @@ var PlayScreen = me.ScreenObject.extend({
 	onDestroyEvent: function() {
 		// remove the HUD
         me.game.disableHUD();
-	}
+	},
+ 
+    // update function
+    update: function() {
+		console.log("asdf");
+		me.game.HUD.updateItemValue("score", 250);
+        // enter pressed ?
+        if (me.input.isKeyPressed('main_menu')) {
+			// add a new HUD item
+			//me.game.HUD.addItem("mainMenu", new MainMenuObject(100, 100));
+        }
+        return true;
+    }
 
 });
 
